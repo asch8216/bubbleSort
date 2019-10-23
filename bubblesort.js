@@ -3,10 +3,7 @@ function bubbleSort(array) {
   if (array.length < 2) {
     return array;
   }
-
-  let counter = 0;
   let swaps = 0;
-
   for (let i = 0; i < array.length; i++) {
     let curElem = array[i];
     if (curElem > array[i + 1]) {
@@ -15,21 +12,10 @@ function bubbleSort(array) {
       array[i + 1] = temp;
       swaps++;
     }
-    counter++;
   }
-  console.log("counter", counter);
-  console.log("swaps", swaps);
-
-  if (counter === array.length) {
-    console.log(array);
-    counter = 0;
-    if (swaps === 0) {
-      console.log(array);
-      return array;
-    } else {
-      bubbleSort(array);
-    }
+  if (swaps > 0) {
+    console.log('array', array);
+    bubbleSort(array);
   }
-
   return array;
 }
